@@ -96,6 +96,8 @@ function Users()
 class Cats
 {
 	public $img;
+	public $address;
+	public $stored_id;
 	
 	public static function Img($img)
 		{
@@ -111,5 +113,15 @@ class Cats
 		{
 			$data = file_get_contents('https://api.mintercat.com');
 			return json_decode($data)->count;
+		}
+	public static function Address($address)
+		{
+			$data = file_get_contents('https://api.mintercat.com/cats?addr=' . $address);
+			return json_decode($data);
+		}
+	public static function StoredId($stored_id)
+		{
+			$data = file_get_contents('https://api.mintercat.com/cats?id=' . $stored_id);
+			return json_decode($data);
 		}
 }
