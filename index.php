@@ -4,7 +4,8 @@ include_once('function.php');
 //---------------------------------------------------------
 $hash = '0xBCAEC4A920F1EFB5B6D163D57660EF50A7630AB3B20A4B797C8EACC33BFCF055';
 $check = true; // or false
-echo $CheckHash = new CheckHash($api,$hash,$check);
+$CheckHash = new CheckHash($api,$hash,$check);
+echo json_encode($CheckHash);
 //---------------------------------------------------------
 echo Coin()->symbol->name;
 //---------------------------------------------------------
