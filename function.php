@@ -55,14 +55,14 @@ class User
 	public $name;
 	public $address;
 	
-	public function UserID($id)
+	public static function ID($id)
 		{
 			$id -= 1;
 			$data = file_get_contents('https://api.mintercat.com/users');
 			$json = json_decode($data,true)[$id];
 			return json_decode(json_encode($json));
 		}
-	public function UserAddress($address)
+	public static function Address($address)
 		{
 			$data = file_get_contents('https://api.mintercat.com/users');
 			$json = json_decode($data,true);
@@ -74,7 +74,7 @@ class User
 			$json = json_decode($data,true)[$id];
 			return json_decode(json_encode($json));
 		}
-	public function UserNick($nick)
+	public static function Nick($nick)
 		{
 			$data = file_get_contents('https://api.mintercat.com/users');
 			$json = json_decode($data,true);
