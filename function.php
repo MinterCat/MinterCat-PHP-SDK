@@ -93,3 +93,23 @@ function Users()
 	$json = json_decode($data,true);
 	return json_decode(json_encode($json));
 }
+class Cats
+{
+	public $img;
+	
+	public static function Img($img)
+		{
+			$data = file_get_contents('https://api.mintercat.com');
+			$json = json_decode($data,true)['cats'];
+			foreach ($json as $value => $cats) {
+				$cat = $cats['img'];
+				if ($cat == $img) {$cat = $cats;break;}
+			}
+			return json_decode(json_encode($cat));
+		}
+	public static function Counts()
+		{
+			$data = file_get_contents('https://api.mintercat.com');
+			return json_decode($data)->count;
+		}
+}
