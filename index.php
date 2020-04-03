@@ -43,5 +43,3 @@ $stored_id = 507192;
 $array_cat = Cats::StoredId($stored_id);
 echo json_encode($array_cat);
 */
-$GetStatusPage = GetStatusPage();
-echo json_encode($GetStatusPage);
