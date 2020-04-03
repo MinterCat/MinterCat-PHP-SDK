@@ -2,6 +2,17 @@
 include_once('function.php');
 /*
 //---------------------------------------------------------
+$GetStatusPage = GetStatusPage();
+echo json_encode($GetStatusPage);
+//---------------------------------------------------------
+$GetBlocks = GetBlocks();
+echo json_encode($GetBlocks);
+//---------------------------------------------------------
+$json_api = JSON('main.json')->test;
+//---------------------------------------------------------
+$Language = Language('Russian');
+echo json_encode($Language);
+//---------------------------------------------------------
 $hash = '0xBCAEC4A920F1EFB5B6D163D57660EF50A7630AB3B20A4B797C8EACC33BFCF055';
 $check = true; // or false
 $CheckHash = new CheckHash($api,$hash,$check);
@@ -32,3 +43,5 @@ $stored_id = 507192;
 $array_cat = Cats::StoredId($stored_id);
 echo json_encode($array_cat);
 */
+$GetStatusPage = GetStatusPage();
+echo json_encode($GetStatusPage);
