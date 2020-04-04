@@ -112,11 +112,13 @@ class Cats
 		public static function Address($address)
 			{
 				$data = file_get_contents('https://api.mintercat.com/cats?addr=' . $address);
-				return json_decode($data);
+				$data = json_decode($data,true)[0];
+				return json_decode(json_encode($data));
 			}
 		public static function StoredId($stored_id)
 			{
 				$data = file_get_contents('https://api.mintercat.com/cats?id=' . $stored_id);
-				return json_decode($data);
+				$data = json_decode($data,true)[0];
+				return json_decode(json_encode($data));
 			}
 	}
