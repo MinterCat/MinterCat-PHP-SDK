@@ -9,3 +9,4 @@ $series = Cats::Img($img)->series;
 $rarity = Cats::Img($img)->rarity;
 $count = Cats::Img($img)->count;
 $value = Cats::Img($img)->value;
+$color = Cats::Img($img)->color;
