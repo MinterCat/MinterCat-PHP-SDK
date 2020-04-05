@@ -25,7 +25,7 @@ foreach ($array_cats as $value => $kity) {
 	
 	$series = $cat->series;
 	$rarity = ($cat->rarity)*100;
-	$price = $cat->price;
+	$price = $cat->value;
 	$name = $cat->name;
 	$count = $cat->count;
 	$gender = $cat->gender;
