@@ -10,19 +10,22 @@ function Language ($lang)
 		$data = file_get_contents($url);
 		return json_decode($data);
 	}
-class CheckHash
+class checkHash
 	{
-		function __construct2($api,$hash)
+		public $api;
+		public $hash;
+		
+		public static function getHash($api, $hash)
 			{
-				$api = new MinterAPI($api);
-				return $api->getTransaction($hash);
+				$data = file_get_contents($api . '/transaction?hash=' . $hash);
+				$jsonCalled = json_decode($data);
+				return $jsonCalled->result;
 			}
-		function __construct3($api, $hash, $check)
+		public static function getCat($api, $hash)
 			{
-				
-				$api = new MinterAPI($api);
-				$payload = $api->getTransaction($hash)->result->payload;
-				$payload = base64_decode($payload); // {'type':1,'img':1,'hash':'0xBCAEC4A920F1EFB5B6D163D57660EF50A7630AB3B20A4B797C8EACC33BFCF055'}
+				$data = file_get_contents($api . '/transaction?hash=' . $hash);
+				$jsonCalled = json_decode($data)->result->payload;
+				$payload = base64_decode($jsonCalled);
 				return json_decode($payload);
 			}
 	}
@@ -118,7 +121,6 @@ class Cats
 		public static function StoredId($stored_id)
 			{
 				$data = file_get_contents('https://api.mintercat.com/cats?id=' . $stored_id);
-				$data = json_decode($data,true)[0];
-				return json_decode(json_encode($data));
+				return json_decode($data);
 			}
 	}

@@ -13,10 +13,11 @@ $json_api = JSON('main.json')->test;
 $Language = Language('Russian');
 echo json_encode($Language);
 //---------------------------------------------------------
-$hash = '0xBCAEC4A920F1EFB5B6D163D57660EF50A7630AB3B20A4B797C8EACC33BFCF055';
-$check = true; // or false
-$CheckHash = new CheckHash($api,$hash,$check);
-echo json_encode($CheckHash);
+$hash = '0x5fd05f8198a150bda3ea284ebbec7c1fbadc9f3ccec393ea91da71d55b583244';
+echo checkHash::getHash($api,$hash);
+//---------------------------------------------------------
+$hash = '0x5fd05f8198a150bda3ea284ebbec7c1fbadc9f3ccec393ea91da71d55b583244';
+echo checkHash::getCat($api,$hash);
 //---------------------------------------------------------
 echo Coin()->symbol->name;
 //---------------------------------------------------------
