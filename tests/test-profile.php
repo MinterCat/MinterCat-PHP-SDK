@@ -15,9 +15,11 @@ $nick = 'ID3';
 
 $address = User::Nick($nick)->address;
 $array_cats = Cats::Address($address);
+
 echo '<div class="cat_content_none"><div class="cat_content">';
 foreach ($array_cats as $value => $kity) {
 	$value++;
+
 	$img = $kity->img;
 	$cat = Cats::Img($img);
 	

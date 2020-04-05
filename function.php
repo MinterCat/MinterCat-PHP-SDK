@@ -6,7 +6,7 @@ function JSON ($url)
 	}
 function Language ($lang)
 	{
-		$url = 'https://raw.githubusercontent.com/MinterCat/Language/master/MinterCat_'.$lang.'.json';
+		$url = 'https://api.mintercat.com/language?lang=' . $lang;
 		$data = file_get_contents($url);
 		return json_decode($data);
 	}
@@ -115,7 +115,7 @@ class Cats
 		public static function Address($address)
 			{
 				$data = file_get_contents('https://api.mintercat.com/cats?addr=' . $address);
-				$data = json_decode($data,true)[0];
+				$data = json_decode($data,true);
 				return json_decode(json_encode($data));
 			}
 		public static function StoredId($stored_id)
