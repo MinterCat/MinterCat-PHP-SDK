@@ -10,3 +10,5 @@ $rarity = Cats::Img($img)->rarity;
 $count = Cats::Img($img)->count;
 $value = Cats::Img($img)->value;
 $color = Cats::Img($img)->color;
+$webp = Cats::Img($img)->webp;
+$png = Cats::Img($img)->png;
