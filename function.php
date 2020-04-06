@@ -138,3 +138,13 @@ class Cats
 				return json_decode($data);
 			}
 	}
+class Gen
+	{
+		public $stored_id;
+
+		public static function StoredId($stored_id)
+			{
+				$data = file_get_contents('https://api.mintercat.com/gen?id=' . $stored_id);
+				return json_decode($data);
+			}
+	}
