@@ -1,5 +1,5 @@
 <?php
-include_once('../function.php');
+require_once('../function.php');
 
 $address = 'Mxedf04c009d83ac3b695eab5392692a0d5a686ae3';
 

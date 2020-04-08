@@ -1,5 +1,5 @@
 <?php
-include_once('../function.php');
+require_once('../function.php');
 include('../config.php');
 
 $hash = '0x5fd05f8198a150bda3ea284ebbec7c1fbadc9f3ccec393ea91da71d55b583244';
