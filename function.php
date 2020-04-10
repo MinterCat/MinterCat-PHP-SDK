@@ -11,7 +11,7 @@ function CoinBalance($address, $symbol)
 		$json = json_decode($data)->data->balances;
 		foreach ($json as $value => $coins) {
 					$coin = $coins->coin;
-					if ($coin == $symbol) {$amount = $coins->amount;break;}
+					if ($coin == $symbol) {$amount = $coins->amount;break;}else{$amount = 0;}
 				}
 		return number_format($amount,2, '.', '');
 	}
