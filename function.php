@@ -13,7 +13,7 @@ function CoinBalance($address, $symbol)
 					$coin = $coins->coin;
 					if ($coin == $symbol) {$amount = $coins->amount;break;}
 				}
-		return $amount;
+		return number_format($amount,2, '.', '');
 	}
 function Language ($lang)
 	{
